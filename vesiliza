@@ -1,40 +1,52 @@
 let array=['пудж','дерево','зуб' ]
-let pickWord=()=>{
+let pickWord=(a)=>{
 //случайное слово
+let x=a[Math.floor(Math.random()*a.length)]
+return x
 }
-let setupAnswerArray =()=>{
+let setupAnswerArray =(a)=>{
     //массив из загаданного слова
-}
-let showPlayerProgress=()=>{
+let x=[]
+for (let i=0;i<a.length;i++){
+x.push(a[i])
+} 
+return x
+}// пушит слово а над еще скрыть буквы
+
+//let showPlayerProgress=()=>{
     //с помощью alert текущее состояние
-}
-let getGuess=()=>{
+//}
+//let getGuess=()=>{
     //ответ игрока promt
-}
-let updateGamesState=()=>{
+//}
+//let updateGamesState=()=>{
     // обновляет answerArray согласно ответу игрока
     // возвращает число букв чтобы обновить remainingLetters
-}
-let showAnswerAndCongratulatePlayer=()=>{
+//}
+//let showAnswerAndCongratulatePlayer=()=>{
     // alert показывает отгаданное слово и поздравляет
-}
+//}
+
+
+
 // загаданное слово 
-let word =pickWord()
+let word =pickWord(array)
+console.log(setupAnswerArray(word))
 //массив из слова
-let answerArray=setupAnswerArray(word)
+//let answerArray=setupAnswerArray(word)
 //сколько букв осталось
-let remainingLetters=word.length
-while (remainingLetters>0){
-    showPlayerProgress(answerArray)
+//let remainingLetters=word.length
+//while (remainingLetters>0){
+  //  showPlayerProgress(answerArray)
     //ответ игрока
-    let guess=getGuess()
-    if (guess===null){
-        break
-    } else if (guess.length!==1){
-        alert ('Пожалуйста введите одиночную букву.')
-    } else {
+    //let guess=getGuess()
+    //if (guess===null){
+     //   break
+   // } else if (guess.length!==1){
+     //   alert ('Пожалуйста введите одиночную букву.')
+   // } else {
         //коллво отгаданных букв
-    let correcGuesses=updateGamesState(guess, word, answerArray)
-remainingLetters-=correcGuesses}
-}
-showAnswerAndCongratulatePlayer(answerArray)
+    //let correcGuesses=updateGamesState(guess, word, answerArray)
+//remainingLetters-=correcGuesses}
+//}
+//showAnswerAndCongratulatePlayer(answerArray)
