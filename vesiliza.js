@@ -11,42 +11,56 @@ for (let i=0;i<a.length;i++){
 x.push(a[i])
 } 
 return x
-}// пушит слово а над еще скрыть буквы
+}
 
-//let showPlayerProgress=()=>{
+let showPlayerProgress=(a)=>{
     //с помощью alert текущее состояние
-//}
-//let getGuess=()=>{
+    let x=[]
+for (let i=0;i<a.length;i++){
+x.push(a['_'])
+} 
+return x
+}
+let getGuess=(a)=>{
     //ответ игрока promt
-//}
-//let updateGamesState=()=>{
+    let x
+    x=prompt('Введите букву')
+    return x
+    
+}
+let updateGamesState=(otwet, slowo, skritoe)=>{
     // обновляет answerArray согласно ответу игрока
     // возвращает число букв чтобы обновить remainingLetters
-//}
-//let showAnswerAndCongratulatePlayer=()=>{
+for (let i=0;i<slowo.length;i++){
+    if (otwet===slowo[i]){
+        skritoe.push(otwet)
+    }
+} return skritoe
+}
+let showAnswerAndCongratulatePlayer=(a)=>{
     // alert показывает отгаданное слово и поздравляет
-//}
+    alert (a)
+}
 
 
 
 // загаданное слово 
 let word =pickWord(array)
-console.log(setupAnswerArray(word))
 //массив из слова
-//let answerArray=setupAnswerArray(word)
+let answerArray=setupAnswerArray(word)
 //сколько букв осталось
-//let remainingLetters=word.length
-//while (remainingLetters>0){
-  //  showPlayerProgress(answerArray)
+let remainingLetters=word.length
+while (remainingLetters>0){
+   showPlayerProgress(answerArray)
     //ответ игрока
-    //let guess=getGuess()
-    //if (guess===null){
-     //   break
-   // } else if (guess.length!==1){
-     //   alert ('Пожалуйста введите одиночную букву.')
-   // } else {
+    let guess=getGuess()
+    if (guess===null){
+        break
+    } else if (guess.length!==1){
+        alert ('Пожалуйста введите одиночную букву.')
+    } else {
         //коллво отгаданных букв
-    //let correcGuesses=updateGamesState(guess, word, answerArray)
-//remainingLetters-=correcGuesses}
-//}
-//showAnswerAndCongratulatePlayer(answerArray)
+    let correcGuesses=updateGamesState(guess, word, answerArray)
+remainingLetters-=correcGuesses}
+}
+showAnswerAndCongratulatePlayer(answerArray)
